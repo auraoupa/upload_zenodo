@@ -1,1 +1,1 @@
-# upload_zenodo
+# Scripts to upload datasets to zenodo
