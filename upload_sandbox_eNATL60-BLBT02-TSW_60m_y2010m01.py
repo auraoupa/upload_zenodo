@@ -3,11 +3,11 @@ import requests
 import numpy as np
 
 
-ACCESS_TOKEN = 'C1MmDeDNgbgzt7rQNl1JwLjwQJM7Icft25TtU8599PNvdM6m6aPI0vVtwNWI'
+ACCESS_TOKEN = 'SFsdzsUTPjgifG8Bzg3AiuAt8tD6EqJv5cS8x6ZGA2Zs092CKR3kmX4xp235'
 headers = {"Content-Type": "application/json"}
 params = {'access_token': ACCESS_TOKEN}
 
-r0 = requests.post('https://zenodo.org/api/deposit/depositions',
+r0 = requests.post('https://sandbox.zenodo.org/api/deposit/depositions',
                    params=params,
                    json={},
                    headers=headers)
