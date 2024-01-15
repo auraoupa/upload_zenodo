@@ -20,9 +20,9 @@ print(deposition_id)
 
 bucket_url = r0.json()["links"]["bucket"]
 
-for day in np.arange(1,DAYF+1):
+for day in np.arange(1,31+1):
     dd="{:02d}".format(day) 
-    filename = "eNATL60-BLBT02_yYEARmMONTHd"+str(dd)+".1d_TSW_60m.nc"
+    filename = "eNATL60-BLBT02_y2010m01d"+str(dd)+".1d_TSW_60m.nc"
     path = "/mnt/summer/DATA_MEOM/MODEL_SET/eNATL60/eNATL60-BLBT02/1d/eNATL60/%s" % filename
     with open(path, "rb") as fp:
         r1 = requests.put(
@@ -35,10 +35,10 @@ print(r1.json())
 
 data = {
     "metadata": {
-        "title": "eNATL60-BLBT02 TSW 60m yYEARmMONTH",
+        "title": "eNATL60-BLBT02 TSW 60m y2010m01",
         "upload_type": "dataset",
         "publication date":"2023-12-01",
-        "description":"Daily files of eNATL60-BLBT02 Temperature Salinity and Vertical velocity fields at 60m for year YEAR month MONTH",
+        "description":"Daily files of eNATL60-BLBT02 Temperature Salinity and Vertical velocity fields at 60m for year 2010 month 01",
         "creators": [
             {"name": "Albert, Aurelie", "affiliation": "CNRS"}
         ],

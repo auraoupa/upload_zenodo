@@ -22,7 +22,7 @@ bucket_url = r0.json()["links"]["bucket"]
 
 for day in np.arange(1,DAYF+1):
     dd="{:02d}".format(day) 
-    filename = "eNATL60-BLBT02_yYEARmMONTHd"+str(dd)+".1d_TSW_60m.nc"
+    filename = "eNATL60-BLBT02_yYEARmMONTHd"+str(dd)+".1d_TSWm_60m.nc"
     path = "/mnt/summer/DATA_MEOM/MODEL_SET/eNATL60/eNATL60-BLBT02/1d/eNATL60/%s" % filename
     with open(path, "rb") as fp:
         r1 = requests.put(
@@ -37,8 +37,8 @@ data = {
     "metadata": {
         "title": "eNATL60-BLBT02 TSW 60m yYEARmMONTH",
         "upload_type": "dataset",
-        "publication date":"2023-12-01",
-        "description":"Daily files of eNATL60-BLBT02 Temperature Salinity and Vertical velocity fields at 60m for year YEAR month MONTH",
+        "publication date":"2023-12-20",
+        "description":"Daily files of eNATL60-BLBT02 Temperature Salinity and Vertical velocity fields at 60m for year YEAR month MONTH and sea-land mask",
         "creators": [
             {"name": "Albert, Aurelie", "affiliation": "CNRS"}
         ],

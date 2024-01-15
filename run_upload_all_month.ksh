@@ -1,6 +1,7 @@
 micromamba activate zenodo
 
-for m in $(seq 3 12); do
+for m in $(seq 1 12); do
+#for m in 11; do
 	mm=$(printf "%02d" $m)
 	case $m in
 		1|2|2|3|4|5|6) year=2010;;
@@ -13,11 +14,11 @@ for m in $(seq 3 12); do
 		4|6|9|11) dayf=30;;
 	esac
 
-	cp template_upload_eNATL60-BLBT02-TSW_60m_monthly.py tmp_upload_eNATL60-BLBT02-TSW_60m_year${year}m${mm}.py
-	sed -i "s/YEAR/${year}/g" tmp_upload_eNATL60-BLBT02-TSW_60m_year${year}m${mm}.py
-	sed -i "s/MONTH/${mm}/g" tmp_upload_eNATL60-BLBT02-TSW_60m_year${year}m${mm}.py
-	sed -i "s/DAYF/${dayf}/g" tmp_upload_eNATL60-BLBT02-TSW_60m_year${year}m${mm}.py
-	python tmp_upload_eNATL60-BLBT02-TSW_60m_year${year}m${mm}.py
+	cp template_upload_eNATL60-BLBT02-TSWm_60m_monthly.py tmp_upload_eNATL60-BLBT02-TSWm_60m_year${year}m${mm}.py
+	sed -i "s/YEAR/${year}/g" tmp_upload_eNATL60-BLBT02-TSWm_60m_year${year}m${mm}.py
+	sed -i "s/MONTH/${mm}/g" tmp_upload_eNATL60-BLBT02-TSWm_60m_year${year}m${mm}.py
+	sed -i "s/DAYF/${dayf}/g" tmp_upload_eNATL60-BLBT02-TSWm_60m_year${year}m${mm}.py
+	python tmp_upload_eNATL60-BLBT02-TSWm_60m_year${year}m${mm}.py
 done
 
 

@@ -20,7 +20,7 @@ print(deposition_id)
 
 bucket_url = r0.json()["links"]["bucket"]
 
-for day in np.arange(1,30):
+for day in np.arange(1,30+1):
     dd="{:02d}".format(day) 
     filename = "eNATL60-BLBT02_y2010m04d"+str(dd)+".1d_TSW_60m.nc"
     path = "/mnt/summer/DATA_MEOM/MODEL_SET/eNATL60/eNATL60-BLBT02/1d/eNATL60/%s" % filename
@@ -46,7 +46,7 @@ data = {
     }
 }
 
-r2 = requests.put('https://sandbox.zenodo.org/api/deposit/depositions/%s' % deposition_id,
+r2 = requests.put('https://zenodo.org/api/deposit/depositions/%s' % deposition_id,
                   params={'access_token': ACCESS_TOKEN}, data=json.dumps(data),
                   headers=headers)
 
